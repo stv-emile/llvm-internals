@@ -1,0 +1,5 @@
+/Users/steevensonemile/para/compilation/llvm-internals/cmake_craig_scott/Appplications/sub/build/CMakeFiles/subexec.dir
+/Users/steevensonemile/para/compilation/llvm-internals/cmake_craig_scott/Appplications/sub/build/CMakeFiles/edit_cache.dir
+/Users/steevensonemile/para/compilation/llvm-internals/cmake_craig_scott/Appplications/sub/build/CMakeFiles/rebuild_cache.dir
+/Users/steevensonemile/para/compilation/llvm-internals/cmake_craig_scott/Appplications/sub/build/mysub/CMakeFiles/edit_cache.dir
+/Users/steevensonemile/para/compilation/llvm-internals/cmake_craig_scott/Appplications/sub/build/mysub/CMakeFiles/rebuild_cache.dir

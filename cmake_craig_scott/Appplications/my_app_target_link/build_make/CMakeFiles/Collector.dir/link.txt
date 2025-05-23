@@ -1,0 +1,2 @@
+/Library/Developer/CommandLineTools/usr/bin/ar qc libCollector.a CMakeFiles/Collector.dir/src1.cpp.o
+/Library/Developer/CommandLineTools/usr/bin/ranlib libCollector.a

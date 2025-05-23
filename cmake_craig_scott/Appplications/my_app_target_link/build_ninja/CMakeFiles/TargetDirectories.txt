@@ -1,0 +1,7 @@
+/Users/steevensonemile/para/compilation/llvm-internals/cmake_craig_scott/Appplications/my_app_link/build_ninja/CMakeFiles/Collector.dir
+/Users/steevensonemile/para/compilation/llvm-internals/cmake_craig_scott/Appplications/my_app_link/build_ninja/CMakeFiles/Algo.dir
+/Users/steevensonemile/para/compilation/llvm-internals/cmake_craig_scott/Appplications/my_app_link/build_ninja/CMakeFiles/Engine.dir
+/Users/steevensonemile/para/compilation/llvm-internals/cmake_craig_scott/Appplications/my_app_link/build_ninja/CMakeFiles/Ui.dir
+/Users/steevensonemile/para/compilation/llvm-internals/cmake_craig_scott/Appplications/my_app_link/build_ninja/CMakeFiles/MyApp.dir
+/Users/steevensonemile/para/compilation/llvm-internals/cmake_craig_scott/Appplications/my_app_link/build_ninja/CMakeFiles/edit_cache.dir
+/Users/steevensonemile/para/compilation/llvm-internals/cmake_craig_scott/Appplications/my_app_link/build_ninja/CMakeFiles/rebuild_cache.dir
