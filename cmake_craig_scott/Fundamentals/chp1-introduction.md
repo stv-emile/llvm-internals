@@ -1,6 +1,8 @@
 
+# Introduction
+
 Problem:
-Creating build system for multiplatform applications drives to complexity.
+Creating build system for multi platform applications drives to complexity.
 
 Solution:
 Cmake make the process more manageble.
