@@ -1,2 +1,0 @@
-/Library/Developer/CommandLineTools/usr/bin/ar qc libAlgo.a CMakeFiles/Algo.dir/src2.cpp.o
-/Library/Developer/CommandLineTools/usr/bin/ranlib libAlgo.a

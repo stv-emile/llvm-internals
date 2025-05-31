@@ -9,8 +9,7 @@ CMakeLists.txt
 A project have both:
 - **A Source Directory**:   
   Where the *CMakeLists.txt file* is located and the *project’s source files* and all other files needed for the build are organized 
-- **A Binary Directory.**
-
+- **A Binary Directory.**   
 
 > Where do you want your build directory to be in relation to your source directory ?
 
@@ -87,7 +86,7 @@ output logs:
   ```sh
   cmake --build /pathTo/build --config Debug --target Myapp
   ```
-  - The `--build` option points to the build directory used by the CMake project generation step.
+  - The `--build` option points to the build directory used by the CMake project generation step.friday_practice
   - The `--config` option: for multi configuration generators, specifies which configuration to build. (Ignored for single configuration generators).
   - `--target` option: used to tell the build tool what to build. list of target space separated.
 

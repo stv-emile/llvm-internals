@@ -292,6 +292,6 @@ break() and continue() like in C.
 
 - Prefer to use looping commands which avoid ambiguous or misleading code. 
 
-- If using the RANGE form of foreach(), always specify both the start and end values.
+- **If using the RANGE form of foreach(), always specify both the start and end values.**
 
-- prefer IN LISTS or IN ITEMS forms  over  foreach(loopVar item1 item2 ...) form.
+- **prefer IN LISTS or IN ITEMS forms**  over  foreach(loopVar item1 item2 ...) form.

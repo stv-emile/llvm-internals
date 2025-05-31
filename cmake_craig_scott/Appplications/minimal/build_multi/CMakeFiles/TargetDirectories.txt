@@ -1,5 +1,0 @@
-/Users/steevensonemile/para/compilation/llvm-internals/cmake_craig_scott/Appplications/minimal/build_multi/CMakeFiles/main.dir
-/Users/steevensonemile/para/compilation/llvm-internals/cmake_craig_scott/Appplications/minimal/build_multi/CMakeFiles/main_deb.dir
-/Users/steevensonemile/para/compilation/llvm-internals/cmake_craig_scott/Appplications/minimal/build_multi/CMakeFiles/main_disc.dir
-/Users/steevensonemile/para/compilation/llvm-internals/cmake_craig_scott/Appplications/minimal/build_multi/CMakeFiles/edit_cache.dir
-/Users/steevensonemile/para/compilation/llvm-internals/cmake_craig_scott/Appplications/minimal/build_multi/CMakeFiles/rebuild_cache.dir

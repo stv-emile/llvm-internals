@@ -81,25 +81,24 @@ pulling in content from other directories
   include(module   [OPTIONAL] [RESULT_VARIABLE myVar] [NO_POLICY_SCOPE])
 ```
 
-The first form is somewhat analogous to add_subdirectory().
+**The first form is somewhat analogous to add_subdirectory().**   
 `include(fileName [OPTIONAL] [RESULT_VARIABLE myVar] [NO_POLICY_SCOPE])`
 Important differences to add_subdirectory():
-- include() expects the name of a file to read in / add_directro:  a folder
-- expect file of .cmake as extension / add_directory: a CMakeList.txt in the folder.
-- policy scope can be diable in include / a new policy scope always by default on add_subdirectory
+- include() **expects the name of a file to read in** / add_directro:  a folder
+- **expect file of .cmake as extension** / add_directory: a CMakeList.txt in the folder.
+- **policy scope can be diSable in include** / a new policy scope always by default on add_subdirectory
 - CMAKE_CURRENT_SOURCE_DIR and CMAKE_CURRENT_BINARY_DIR don not change when processing the file named by include().
 
-The second form serves an entirely different purpose - It is used to load the named module (Chp11)
+**The second form serves an entirely different purpose** - It is used to load the named module (Chp11)   
 `include(module   [OPTIONAL] [RESULT_VARIABLE myVar] [NO_POLICY_SCOPE])`
-
 
 CMAKE_CURRENT_SOURCE_DIR does not change when include() is called
 => CMAKE_CURRENT_SOURCE_DIR contain the location of the caller file -  not the directory containing the included file.
 
 Additional set of variables provided by CMake to get the included files directory:
-- CMAKE_CURRENT_LIST_DIR: updated when processing the included file, absolute path
-- CMAKE_CURRENT_LIST_FILE: the name of the file currently being processed, absolute path
-- CMAKE_CURRENT_LIST_LINE: the line number of the file currently being processed (for debugging)
+- `CMAKE_CURRENT_LIST_DIR`: updated when processing the included file, absolute path
+- `CMAKE_CURRENT_LIST_FILE`: the name of the file currently being processed, absolute path
+- `CMAKE_CURRENT_LIST_LINE`: the line number of the file currently being processed (for debugging)
 
 IMPORTANT
 They work for any file being processed by CMake, not just those pulled in by an include() command.

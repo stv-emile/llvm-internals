@@ -91,17 +91,24 @@ There are two sets of variables:
 - variables defined by the project for its own use
 - variable set to to influence behavior of CMake’s commands
 
-## 4.2 Environnment variable
+## 4.2 Environnment variable - Rarely useful
 
 Retrieve and set environment variables values.
 - Obtained: `$ENV{varName}`
 - This can be used anywhere a regular ${varName} form can be used.
 setting env variable.
 ```
+  # Definition Syntax
+  set(ENV{VARNAME} "VALUE")
+
+  # Dereferencing Syntax
+  message("value = $ENV{VARNAME}")
+
+  # Modifying the PATH environnment variable.
   set(ENV{PATH} "$ENV{PATH}:/opt/myDir")
 ```
 
->[!Warning]
+>[!Warning]   
 > Setting environment variables within the CMakeLists.txt file like this is rarely useful.
 > As soon as the CMake run is finished, the change to the environment variable is lost.
 
@@ -113,36 +120,36 @@ setting env variable.
 ```sh
 set(varName value... CACHE type "docstring" [FORCE])
 ```
-- the docstring can be empty -  its a documentation string used only by GUI.
+- the `docstring` can be empty -  its a documentation string used only by GUI.
 - The type is used mostly to improve the user experience in GUI tools.
 
-The type must be :
-  - BOOL: a boolean on/off value == checkbox in GUI.
+The `type` must be :
+  - `BOOL`: a boolean on/off value == checkbox in GUI.
           [ON/OFF, TRUE/FALSE, 1/0 etc.](Section 6.1.1, “Basic Expressions”)
     
-  - FILEPATH: a path to a file on disk ==  a file dialog to the user in GUI.
+  - `FILEPATH`: a path to a file on disk ==  a file dialog to the user in GUI.
     
-  - PATH:  a path to a file on disk == dialog that selects a directory in GUI.
+  - `PATH`:  a path to a file on disk == dialog that selects a directory in GUI.
   
-  - STRING: an arbitrary string == a single-line text edit widget in GUI.
+  - `STRING`: an arbitrary string == a single-line text edit widget in GUI.
   
-  - INTERNAL: not intended to be made available to the user - Not shown by GUI.
+  - `INTERNAL`: not intended to be made available to the user - Not shown by GUI.
 
->[!Important]
-> Setting a boolean cache variable is a common need.
-> CMake provides a separate command for it. equivalent commands
-> `option(optVar helpString [initialValue])` by default initialValue is OFF
-> `set(optVar initialValue CACHE BOOL helpString)`
+>[!Important]   
+> Setting a **boolean cache variable** is a common need.   
+> CMake provides a separate command for it. equivalent commands      
+> `option(optVar helpString [initialValue])` by default initialValue is OFF   
+> `set(optVar initialValue CACHE BOOL helpString)`   
 > [Little difference](Section 5.5, “Potentially Surprising Behavior Of Variables”)
 
 Difference between normal and cache variable.
-- cahe: set() command will only overwrite a cache variable if the FORCE keyword is present.
+- cache: set() command will only overwrite a cache variable if the FORCE keyword is present.
 - normal: set() command will always overwrite a pre-existing value.
 
 ## 5.4. Scope Blocks
-- Cache variables have global scope, so they are always accessible.
+- **Cache variables have global scope, so they are always accessible.**
 - non-cache variable’s scope is the CMakeLists.txt file in which the variable is defined. often called the directory scope.
-- Subdirectories and functions inherit variables from their parent scope.
+- **Subdirectories and functions inherit variables from their parent scope.**
 
 (>CMake 3.25)
 `block()` and `endblock()`   commands can be used to define a local variable scope. 
@@ -159,13 +166,13 @@ set(x 1)
   # Here, x still equals 1, y is not defined
 ```
 
-Selectively modify some variables in the surrounding scope.
+To Selectively modify some variables in the surrounding scope, 
 PARENT_SCOPE of the set() and unset() commands can be used.
 ```
   set(x 1)
   set(y 3)
   block()
-      set(x 2 PARENT_SCOPE)
+      set(x 2 PARENT_SCOPE) # THis chnge only the parent variable - all the value in the variable copied from parent keep their original values
       unset(y PARENT_SCOPE)
       # x still has the value 1 here
       # y still exists and has the value 3
@@ -230,7 +237,7 @@ via command line options passed to cmake.
 cmake -D myVar:type=someValue ...
 ```
 - someValue will replace any previous value of the myVar cache variable.
-- same behaviour as the set() command with the CACHE and FORCE options.
+- **Same behaviour as the set() command with the CACHE and FORCE options.**
 - no corresponding set()/option() command is required in CMakeLists.txt
 - docstring is empty.
 - the type can be omitted = variable will have an undefined type = INTERNAL
@@ -266,10 +273,10 @@ message("The value of myVar = ${myVar}\nAnd this "
 ## 5.8. String Handling
 project complexity grows.
 string handling functionality enables projects to perform :
-- find and replace operations, 
-- regular expression matching, 
-- upper/lower case transformations, 
-- strip whitespace and other common tasks.
+- **find** and **replace** operations, 
+- **regular expression** matching, 
+- upper/lower **case transformations**, 
+- **strip whitespace** and other common tasks.
 Refere to CMake reference documentation to use them.
 Return values are stored in variables.
 
@@ -439,16 +446,16 @@ Don't underestimate it. use it.
 
 - Prefer to provide cache variables for controlling whether to enable optional parts of the build instead of encoding the logic in build scripts outside of CMake.
 
-- Try to avoid relying on environment variables being defined to make build predictable, reliable and easy to set up.
+- **Try to avoid relying on environment variables** being defined to make build predictable, reliable and easy to set up.
 
 - prefer to pass information directly to CMake through cache variables instead wherever possible.
 
 - Try to establish a variable naming convention early. 
 
-- For cache variables, consider grouping related variables under a common prefix followed by an underscore  to take advantage of how CMake GUI groups variables.
+- **For cache variables, consider grouping related variables under a common prefix followed by an underscore  to take advantage of how CMake GUI groups variables.**
 
 - A name beginning with the project name or something closely associated with the project may be desirable for scalability.
 
-- Avoid defining non-cache variables in the project which have the same name as cache variables.
+- **Avoid defining non-cache variables in the project which have the same name as cache variables.**
 
 - make a quick scan through the CMake documentation page listing the pre-defined variable  to become familiar with already existing variables wich influence CMake’s behavior.
